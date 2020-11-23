@@ -1,4 +1,5 @@
 import navBar from '../src/myNavBar';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import './App.css';
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <div className="Steve using Amplify">
+
       <nav>
         <navBar id="navBar" class="row justify-content-between align-items-center myRow">
           <div className="col-sm-2 btn btn-primary">1</div>
@@ -105,8 +107,11 @@ function App() {
       <footer>
         <div id="footer" className="row justify-content-center align-items-center">footer</div>
       </footer>
+      <div>
+        <AmplifySignOut />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
